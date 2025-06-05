@@ -1,0 +1,19 @@
+
+   
+    
+      <div class="card p-3 glass-weather glass-weather:hover  shadow-lg  text-white" [routerLink]="['/city', cityName.cityName]">
+        <h5 class="card-title city mb-4 ps-3">{{ cityName.cityName }}</h5>
+        <div class="card-body"  > 
+          <img [src]="'https:' + icon" class="h-25" class="w-25" alt="weather icon">
+        <p class="temperature">Temperature: {{ cityName.temperature }} °C</p>
+        <p class ="description">Condition: {{ cityName.condition }}</p>
+        
+        </div>
+      </div>
+    
+  
+
+
+
+
+      

@@ -1,0 +1,59 @@
+[ {
+    "name": "akash",
+    "rollNumber": 1,
+    "subjects": [
+      "Mathematics",
+      "Science",
+      "English"
+    ]
+  },
+  {
+    "name": "manoj",
+    "rollNumber": 2,
+    "subjects": [
+      "Mathematics",
+      "History",
+      "Geography"
+    ]
+  },
+  {
+    "name": "rahul",
+    "rollNumber": 3,
+    "subjects": [
+      "Science",
+      "English",
+      "Computer Science"
+
+    
+
+    ]
+  },
+
+  {
+    "name": "hemant",
+    "rollNumber": 4,
+    "subjects": [
+      "Science",
+      "English",
+      "Computer Science"
+
+    
+
+    ]
+  },
+
+  {
+    "name": "varun",
+    "rollNumber": 5,
+    "subjects": [
+      "Science",
+      "English",
+      "Computer Science"
+
+    
+
+    ]
+  }
+]
+ 
+ 

@@ -1,0 +1,151 @@
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, #a084ca, #5e60ce); 
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+}
+        body1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+            min-height: 100vh;
+            background: url('https://i.imgur.com/2YlMKw7.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .glass-weather {
+            background: rgba(255, 255, 255, 0.17);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 30px;
+            
+            color: white;
+          
+            transition: all 0.3s ease;
+        }
+
+        .glass-weather:hover {
+           transform: scale(1.015); 
+           box-shadow: 
+           0 8px 24px rgba(0, 0, 0, 0.2), 
+           0 0 6px rgba(255, 255, 255, 0.1); 
+          border: 1px solid rgba(255, 255, 255, 0.2); 
+         }
+        
+
+             
+          
+        
+
+        .temperature {
+            font-size: 20px;
+            font-weight: 100S;
+            line-height: 1;
+            position: relative;
+        }
+
+        .temperature::after {
+            
+            position: absolute;
+            font-size: 30px;
+            top: 10px;
+        }
+
+
+       .glass-panel {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 180px;
+  min-height: 220px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+
+.weather-container {
+  background: linear-gradient(135deg, #e0e8ff 0%, #f4f7ff 100%);
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  color: #333;
+   display: inline-flex; 
+  max-width: 35vw;      /* Keeps it responsive */
+  
+}
+
+.forecast-card {
+  background: #ffffffee;
+  border-radius: 20px;
+  width: 140px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+.forecast-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.flip-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  height: 100%;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.fixed-height {
+  height: 300px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.glass-weather {
+            background: rgba(255, 255, 255, 0.17);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            padding: 30px;
+            
+            color: white;
+          
+            transition: all 0.3s ease;
+        }

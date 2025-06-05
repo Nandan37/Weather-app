@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+<div class="container mt-4">
+
+    <h2 class="text-center">Student Table</h2> 
+    <input [(ngModel)]="searchName" type="text"  placeholder="enter name">
+    <button class="btn btn-primary ms-2" (click)="onSearch()"><i class="bi bi-search"></i></button>
+
+    <table class="table table-striped table-bordered w-auto">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width: 150px;">RollNumber</th>
+          <th scope="col" style="width: 150px;">Name</th>
+          <th scope="col" style="width: 300px;">Subjects</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+  
+        @for (student of students; track student.rollNumber){
+
+
+          <tr>
+          
+            <td >{{ student.rollNumber }}</td>
+            <a [routerLink]="['/student', student.rollNumber]">
+              
+              <td class="text-capitalize">{{ student.name }}</td></a>
+            <td class="text-capitalize">{{ student.subjects }}</td>
+          
+          </tr>
+
+          
+      
+      }
+      </tbody>
+    </table>
+
+    @if(matchedStudent){
+    <table class="table table-striped table-bordered w-auto">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" style="width: 150px;">RollNumber</th>
+          <th scope="col" style="width: 150px;">Name</th>
+          <th scope="col" style="width: 300px;">Subjects</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+  
+        
+
+          <tr>
+          
+            <td >{{ matchedStudent.rollNumber }}</td>
+            <a [routerLink]="['/student', matchedStudent.rollNumber]">
+              
+              <td class="text-capitalize">{{ matchedStudent.name }}</td></a>
+            <td class="text-capitalize">{{ matchedStudent.subjects }}</td>
+          
+          </tr>
+          
+
+          
+      
+      
+      </tbody>
+    </table>
+    }
+         @else{
+          <div> Data not found</div>
+         }
+    </div>
+
+
+    <div> 
+     
+       <a routerLink="/Weather">Check Weather</a>
+
+    </div>
+
+    

@@ -1,0 +1,104 @@
+<body >
+
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div *ngIf="cityName" class="col-sm-12 col-md-4 col-lg-4 mt-4">
+      <div class="card p-3 glass-weather glass-weather:hover shadow-lg  text-white">
+        <h5 class="card-title city mb-4 ps-3">{{ cityName }}</h5>
+        <div class="card-body"  >
+           <img *ngIf="weatherIconUrl" [src]="weatherIconUrl" class="h-25 w-25 " alt="Weather Icon">
+        <p class="temperature">Temperature: {{ temperature }} °C</p>
+        <p class ="description">Condition: {{ weatherCondition }}</p>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <div class="container mt-4 mb-3">
+  <div class="row">
+
+   <div class="col-md-4 mb-3 ">
+  <div class="flip-card" (click)="isFlipped = !isFlipped">
+    <div class="flip-card-inner" [class.flipped]="isFlipped">
+      
+    
+      <div class="flip-card-front card shadow-sm rounded  ">
+        <h5 class="card-title text-white">Air Quality</h5>
+        <div class="card-body glass-weather">
+          
+          <ul *ngIf="airQuality && airQuality.co" class="list-unstyled">
+            <li>PM2.5: {{ airQuality.pm2_5 }}</li>
+            <li>PM10: {{ airQuality.pm10 }}</li>
+           
+          </ul>
+        </div>
+      </div>
+
+      
+      <div class="flip-card-back card shadow-sm rounded ">
+        <div class="card-body glass-weather fixed-height">
+          <h5 class="card-title">More Air Quality</h5>
+          <ul class="list-unstyled">
+             <li>CO: {{ airQuality.co }}</li>
+            <li>NO₂: {{ airQuality.no2 }}</li>
+            <li>O₃: {{ airQuality.o3 }}</li>
+            <li>SO₂: {{ airQuality.so2 }}</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  
+    <div class="col-md-4 mb-3 fixed-height">
+      <div class="card shadow-sm rounded glass-weather fixed-height">
+         <h5 class="card-title">Wind Info</h5>
+        <div class="card-body fixed-height">
+          
+          <p>Speed: {{ windKph }} kph</p>
+          <p>Direction: {{ windDirection }}</p>
+          <p>Humidity: {{ humidity }}%</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 mb-3 ">
+      <div class="card shadow-sm rounded glass-weather fixed-height">
+      
+        <div class="card-body">
+           <h5 class="card-title mb-3">Precipitation</h5>
+          <p>Precipitation: {{ precip }} mm</p>
+          <p>Local Time: {{ localtime }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h2 class="text-center mt-2">Forecast</h2>
+<div class="d-flex justify-content-center mt-2 container p-3">
+<div class="weather-container d-flex flex-column flex-md-row align-items-center justify-content-between p-4 rounded-4 shadow-sm mt-4 ms-4">
+  
+
+  
+  <div class="d-flex gap-3 flex-wrap justify-content-center">
+    <div *ngFor="let day of forecastData" class="forecast-card p-3 rounded-4 text-center">
+      <img [src]="'https:' + day.iconUrl" [alt]="day.condition" width="50" />
+      <h4 class="fw-bold mt-2">{{ day.maxTempC }}<sup>°</sup></h4>
+      <p class="mb-1 fw-semibold">{{ day.weekday }}</p>
+      <p class="text-muted mb-0">{{ day.date }}</p>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>

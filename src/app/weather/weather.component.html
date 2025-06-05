@@ -1,0 +1,96 @@
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm ">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+
+
+    
+
+
+    
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+    <div class="collapse navbar-collapse" id="navbarContent">
+
+      
+      <form class="d-flex mx-auto" (submit)="fetchWeather()">
+        <input
+          type="text"
+          class="form-control form-control-sm me-3"
+          placeholder="Enter location"
+          [(ngModel)]="userInput"
+          name="search"
+        />
+        <button type="submit" class="btn btn-sm btn-primary">Get Weather</button>
+      </form>
+
+      
+    </div>
+  </div>
+</nav>
+  
+
+
+
+  
+  <div class="background"></div>
+   <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+<div class="background">
+  <div class="container-fluid ">
+  <div class="row justify-content-center">
+    <div *ngIf="cityName" class="col-sm-12 col-md-4 col-lg-4 mt-4">
+      <div class="card p-3 glass-weather glass-weather:hover shadow-lg  text-white" [routerLink]="['/city', cityName]">
+        <h5 class="card-title city mb-4 ps-3">{{ cityName }}</h5>
+        <div class="card-body"  >
+        <p class="temperature">Temperature: {{ temperature }} °C</p>
+        <p class ="description">Condition: {{ weatherCondition }}</p>
+        <img *ngIf="weatherIconUrl" [src]="weatherIconUrl" class="h-25 w-25 " alt="Weather Icon">
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+
+
+<div class="row">
+  @for (data of defaultWeatherData; track data.cityName) {
+    
+    <div class="col-md-3 mb-3 col-12 col-sm-6 mt-4 container p-3">
+    
+      <app-generic-card
+  
+    [cityName]="data"
+    [temperature]="data.temperature"
+    [condition]="data.condition"
+    [icon] ="data.iconUrl"
+  
+  >
+  
+</app-generic-card>
+    </div>
+  }
+</div>
+</div>
+
+  
+ <!-- @for (data of defaultWeatherData; track data.cityName) {
+  <app-generic-card
+  
+    [cityName]="data"
+    [temperature]="data.temperature"
+    [condition]="data.condition"
+    [icon] ="data.iconUrl"
+  
+  >
+  
+</app-generic-card>
+
+} -->
+
+</div>
