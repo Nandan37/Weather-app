@@ -3,6 +3,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import {  HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from './footer/footer.component';
 
 export interface students {
   name: string;
@@ -14,7 +15,7 @@ export interface students {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink,HttpClientModule,FormsModule,CommonModule ],
+  imports: [RouterOutlet, RouterLink,HttpClientModule,FormsModule,CommonModule, FooterComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

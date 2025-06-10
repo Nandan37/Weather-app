@@ -4,19 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, HttpHeaders, HttpParams } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { GenericCardComponent } from '../generic-card/generic-card.component';
+import { HeaderComponent } from '../header/header.component';
 
 
 
 @Component({
   selector: 'app-weather',
-  imports: [HttpClientModule, FormsModule, CommonModule, RouterModule, GenericCardComponent],
+  imports: [HttpClientModule, FormsModule, CommonModule, RouterModule, GenericCardComponent, HeaderComponent],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.css'
 })
 
 
   export class WeatherComponent implements OnInit {
-  userInput: string = '';
+  city: string = '';
   cityName: string = '';
   temperature: number | null = null;
   weatherCondition: string = '';
@@ -55,11 +56,11 @@ import { GenericCardComponent } from '../generic-card/generic-card.component';
     });
   }
 
-  fetchWeather() {
-    if (!this.userInput.trim()) return;
+  fetchWeather(city :string) {
+    if (!city.trim()) return;
 
     const apiKey = '068caa44af1447d2ada202055251205'; 
-    const query = (this.userInput.trim());
+    const query = city.trim();
     const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}`;
 
     fetch(apiUrl)

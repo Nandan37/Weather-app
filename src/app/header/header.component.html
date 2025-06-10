@@ -1,0 +1,20 @@
+<header class="header">
+  
+  <div *ngIf="showWelcome" class="welcome">
+    <h3 class="text-start">Welcome to WeatherApp 🌤️</h3>
+  </div>
+
+
+  <div *ngIf="showSearch" class="search-bar ">
+    <input type="text" [(ngModel)]="userInput" placeholder="Enter city..." />
+    <button (click)="onSearchClick()">Search</button>
+  </div>
+
+  
+  
+  <div *ngIf="!showSearch && !showWelcome">
+    <h2 class="text-center">{{ cityName }}</h2>
+  </div>
+
+  <button *ngIf="showBackButton" class="back-btn bg-primary" (click)="onBackClick()">← Back</button>
+</header>

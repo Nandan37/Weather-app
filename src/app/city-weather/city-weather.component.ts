@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-city-weather',
-  imports: [HttpClientModule, CommonModule],
+  imports: [HttpClientModule, CommonModule, HeaderComponent, ],
   templateUrl: './city-weather.component.html',
   styleUrl: './city-weather.component.css'
 })
@@ -30,7 +31,7 @@ export class CityWeatherComponent implements OnInit {
 
    forecastData: any[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private location :Location) {}
 
   ngOnInit(): void {
     
@@ -120,8 +121,14 @@ export class CityWeatherComponent implements OnInit {
       console.error('Error fetching forecast:', error);
     });
 }
+
+goBack() {
+  this.location.back(); 
+}
+
 }
     
+
   
 
 
